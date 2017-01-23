@@ -51,6 +51,18 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "OK-CS580";
 	}
+	
+	/**
+	 * Daniel -- Assignment 3
+	 */
+	@RequestMapping(value = "/cs580/user/{userId}/address", method = RequestMethod.GET)
+	String updateAddresses(@PathVariable("userId") String id) {
+		User user = userManager.getUser(id);
+		user.set_starting_address("Building 8, Pomona, CA");
+		user.set_ending_address("The BRIC, Pomona, CA");
+		String toReturn = "Starting address: " + user.starting_address() + "\n" + "Ending Address: " + user.ending_address();
+		return toReturn;
+	}
 
 	/**
 	 * This is a simple example of how to use a data manager
