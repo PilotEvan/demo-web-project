@@ -51,6 +51,18 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "OK-CS580";
 	}
+
+	/**
+	 * 
+	 * Evan Miller - Assignment 3
+	 */
+	@RequestMapping(value = "/something", method = RequestMethod.GET)
+	String testing() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Hello World!";
+	}
 	
 	/**
 	 * Daniel -- Assignment 3
@@ -138,7 +150,7 @@ public class WebController {
 	 * This method provide a simple web UI for you to test the different
 	 * functionalities used in this web service.
 	 */
-	@RequestMapping(value = "/cs580/home", method = RequestMethod.GET)
+	@RequestMapping(value = "/junk", method = RequestMethod.GET)
 	ModelAndView getUserHomepage() {
 		ModelAndView modelAndView = new ModelAndView("home");
 		modelAndView.addObject("users", listAllUsers());
